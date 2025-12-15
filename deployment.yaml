@@ -1,0 +1,41 @@
+# deployment.yaml (Listing 6 Corrigé)
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-app
+  
+  namespace: etudiant35-ns 
+spec:
+  replicas: 2 
+  selector:
+    matchLabels:
+      app: todo-app 
+  template:
+    metadata:
+      labels:
+        app: todo-app
+    spec:
+      volumes:
+      - name: data-storage
+        persistentVolumeClaim:
+          claimName: app-pvc 
+      
+      containers:
+      - name: api
+        
+        image: ghcr.io/Jayden-Isaiah/todo-app-jdbc-spring/todo-app-api:49da618
+        
+        ports:
+        - containerPort: 8080 
+        
+        env:
+        - name: DB_PASSWORD 
+          valueFrom:
+            secretKeyRef:
+              name: db-secret 
+              key: DB_PASSWORD 
+        
+        volumeMounts:
+        - name: data-storage
+          mountPath: /data 
