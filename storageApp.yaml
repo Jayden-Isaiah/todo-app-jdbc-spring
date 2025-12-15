@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: app-pvc
-  # AJOUTER LE NAMESPACE ICI
+  
   namespace: etudiant35-ns 
 spec:
   accessModes:

@@ -1,4 +1,4 @@
-# deployment.yaml (Listing 6 Corrigé)
+
 
 apiVersion: apps/v1
 kind: Deployment
@@ -24,7 +24,7 @@ spec:
       containers:
       - name: api
         
-        image: ghcr.io/jayden-isaiah/todo-app-jdbc-spring/todo-app-api:49da618
+        image: ghcr.io/jayden-isaiah/todo-app-jdbc-spring/todo-app-api:8cad6c5
         
         ports:
         - containerPort: 8080 
