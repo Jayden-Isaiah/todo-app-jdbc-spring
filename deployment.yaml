@@ -21,7 +21,7 @@ spec:
             claimName: app-pvc
       containers:
         - name: api
-          image: ghcr.io/jayden-isaiah/todo-app-jdbc-spring/todo-app-api:d047974
+          image: ghcr.io/jayden-isaiah/todo-app-jdbc-spring/todo-app-api:b5830b9
           ports:
             - containerPort: 8080
           env:
