@@ -4,7 +4,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: todo-app
-  
+ 
   namespace: etudiant35-ns 
 spec:
   replicas: 2 
@@ -24,7 +24,7 @@ spec:
       containers:
       - name: api
         
-        image: ghcr.io/Jayden-Isaiah/todo-app-jdbc-spring:49da618
+        image: ghcr.io/jayden-isaiah/todo-app-jdbc-spring/todo-app-api:49da618
         
         ports:
         - containerPort: 8080 
@@ -38,4 +38,4 @@ spec:
         
         volumeMounts:
         - name: data-storage
-          mountPath: /data 
+          mountPath: /data
